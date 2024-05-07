@@ -32,9 +32,42 @@ public class AgentService {
         }
     }
 
-    public boolean updateAgent(AgentModel agent){
+    public boolean updateAgentById(String id, AgentModel agent){
         try{
-            agentRepository.save(agent);
+            AgentModel originalAgent=agentRepository.findById(id);
+            if(originalAgent==null){
+                return false;
+            }
+
+            String email = agent.getEmail();
+
+            if(email != null){
+                originalAgent.setEmail(email);
+            }
+
+
+            String name = agent.getName();
+
+            if(name != null){
+                originalAgent.setName(name);
+            }
+
+
+            String phone = agent.getPhone();
+
+            if(phone != null){
+                originalAgent.setPhone(phone);
+            }
+
+
+            String password = agent.getPassword();
+
+            if(password != null){
+                originalAgent.setPassword(password);
+            }
+
+
+            agentRepository.save(originalAgent);
             return true;
         }catch (Exception e){
             e.printStackTrace();

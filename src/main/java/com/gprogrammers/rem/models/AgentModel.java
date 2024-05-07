@@ -1,27 +1,12 @@
 package com.gprogrammers.rem.models;
 
 
-import com.mongodb.lang.NonNull;
-import lombok.Data;
-import org.springframework.data.mongodb.core.index.Indexed;
+import com.gprogrammers.rem.types.User;
+import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
+@EqualsAndHashCode(callSuper = true)
 @Document(collection = "agents")
-@Data
-public class AgentModel {
-    @MongoId
-    private String id;
-
-    @NonNull
-    private String name;
-
-    @NonNull
-    @Indexed(unique = true)
-    private String email;
-
-    @NonNull
-    @Indexed(unique = true)
-    private String phone;
+public class AgentModel extends User {
 
 }
