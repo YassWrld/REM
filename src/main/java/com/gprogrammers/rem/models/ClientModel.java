@@ -24,6 +24,7 @@ public class ClientModel extends User {
         System.out.println("Name: " + name);
         System.out.println("Phone: " + phone);
         System.out.println("Password: " + password);
+        //example about other attributes from User class
     }
 
 
