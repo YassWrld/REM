@@ -17,6 +17,7 @@ public class PropertyController {
     public PropertyService propertyService;
 
 
+
     @GetMapping
     public @ResponseBody List<PropertyModel> mainRoute() {
         return propertyService.getAllProperties();
