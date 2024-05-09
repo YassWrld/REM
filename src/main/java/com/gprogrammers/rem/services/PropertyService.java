@@ -1,28 +1,30 @@
 package com.gprogrammers.rem.services;
 
+
 import com.gprogrammers.rem.models.PropertyModel;
 import com.gprogrammers.rem.repositories.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import java.util.List;
-import java.util.Optional;
 
 public class PropertyService {
+
     @Autowired
 
     private PropertyRepository propertyRepository;
-    public List<PropertyModel> getAllproperty(){
+
+    public List<PropertyModel> getAllProperties() {
         return propertyRepository.findAll();
     }
 
-    public Optional<PropertyModel> getpropertyById(String id){
+    public Object getPropertyById(String id) {
         return propertyRepository.findById(id);
     }
 
-    public boolean insertproperty(PropertyModel property){
-
-        try{
-            PropertyRepository.insert(property);
+    public boolean insertProperty(PropertyModel property) {
+        try {
+            propertyRepository.insert(property);
             return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -30,46 +32,44 @@ public class PropertyService {
         }
     }
 
-    public boolean updateAgentById(String id, PropertyModel agent){
-        try{
-            Optional<PropertyModel> originalproperty= propertyRepository.findById(id);
-            if(originalproperty==null){
+    public boolean updatePropertyById(String id, PropertyModel property) {
+        try {
+            PropertyModel originalProperty = propertyRepository.findById(id);
+            if (originalProperty == null) {
                 return false;
             }
 
-            String location = agent.getLocation();
 
-            if(location != null){
-                originalproperty.setLocation(Location);
+            String name = property.getName();
+
+            if(name != null) {
+                originalProperty.setName(name);
             }
 
+            String location = property.getLocation();
 
-            String name = agent.getName();
-
-            if(name != null){
-                originalpropertysetName(name);
+            if (location != null) {
+                originalProperty.setLocation(location);
             }
 
+            String UrgencyLevel = property.getUrgencyLevel();
 
-            String urgencyLevel = agent.getUrgencyLevel();
-
-            if(urgencyLevel != null){
-                originalproperty.setUrgencyLevel(urgencyLevel);
+            if (UrgencyLevel != null) {
+                originalProperty.setUrgencyLevel(UrgencyLevel);
             }
 
+            String Description = property.getDescription();
 
-            String description = agent.getDescription();
-
-            if(description != null){
-                originalproperty.setDescription(Description);
+            if (Description != null) {
+                originalProperty.setDescription(Description);
             }
 
-
-            propertyRepository.save(originalproperty);
+            PropertyModel.save(originalProperty);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
+
 }
