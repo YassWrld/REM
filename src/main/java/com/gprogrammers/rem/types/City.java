@@ -1,4 +1,4 @@
-package com.gprogrammers.rem.types.enums;
+package com.gprogrammers.rem.types;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class City {
-
     public String name;
     public int cityCode;
 }

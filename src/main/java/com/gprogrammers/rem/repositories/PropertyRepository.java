@@ -5,6 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PropertyRepository extends MongoRepository<PropertyModel, String> {
-    PropertyModel findAgentModelById(String id);
+public interface PropertyRepository extends MongoRepository<PropertyModel, Long> {
+    PropertyModel findById(String id);
 }
