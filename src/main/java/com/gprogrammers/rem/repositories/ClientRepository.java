@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClientRepository extends MongoRepository<ClientModel, Long> {
     ClientModel findById(String id);
+    
 }
