@@ -1,6 +1,8 @@
 package com.gprogrammers.rem.types;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -16,7 +18,4 @@ public abstract class User {
     protected String name;
 
     protected String phone;
-
-    protected String password;
-
 }

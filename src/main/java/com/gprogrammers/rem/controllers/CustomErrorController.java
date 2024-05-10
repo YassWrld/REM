@@ -1,26 +1,40 @@
 package com.gprogrammers.rem.controllers;
 
+import com.gprogrammers.rem.types.ApiErrorResponse;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.StringJoiner;
 
 
 @ControllerAdvice
 public class CustomErrorController implements ErrorController {
 
-    private static final String PATH = "/error";
-    @RequestMapping(PATH)
-    public ResponseEntity<String> handleError() {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Page not found");
+
+    //not found error
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND) //404 Page not found
+    public @ResponseBody ApiErrorResponse handleNoResourceFoundException(NoResourceFoundException e) {
+        ApiErrorResponse response = new ApiErrorResponse();
+        response.setError("Page not found");
+        return response;
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception e) {
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public @ResponseBody ApiErrorResponse handleException(Exception e) {
+        ApiErrorResponse response = new ApiErrorResponse();
+        response.setError("An error occurred!: " + e.getMessage());
+        //make a string of the stack trace joined by new lines
 
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred!: " + e.getMessage());
+
+        return response;
     }
 
 

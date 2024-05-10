@@ -5,7 +5,6 @@ import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.repositories.AgentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
@@ -13,12 +12,18 @@ import java.util.List;
 public class AgentService {
     @Autowired
     private AgentRepository agentRepository;
+
+
     public List<AgentModel> getAllAgents(){
         return agentRepository.findAll();
     }
 
     public AgentModel getAgentById(String id){
         return agentRepository.findById(id);
+    }
+
+    public AgentModel getAgentByEmail(String email){
+        return agentRepository.findByEmail(email);
     }
 
     public boolean insertAgent(AgentModel agent){
@@ -38,6 +43,10 @@ public class AgentService {
             if(originalAgent==null){
                 return false;
             }
+
+
+
+
 
             String email = agent.getEmail();
 
