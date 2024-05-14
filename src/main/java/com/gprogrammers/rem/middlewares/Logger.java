@@ -16,7 +16,7 @@ public class Logger implements Filter {
         HttpServletRequest req=(HttpServletRequest) request;
         String message=String.format("%s request to path %s on %s", req.getMethod(), req.getRequestURI(), new Date());
         System.out.println(message);
-        try {
+       try {
             chain.doFilter(request, response); // Continue the filter chain
         } catch (Exception e) {
             e.printStackTrace();

@@ -18,12 +18,20 @@ public class AgentController {
     private AgentService agentService;
 
     @GetMapping
-    public @ResponseBody List<AgentModel> mainRoute() {
-        return agentService.getAllAgents();
+    public @ResponseBody ApiResponse<List<AgentModel>> getAllAgents() {
+
+        ApiResponse<List<AgentModel>> response = new ApiResponse<>();
+        List<AgentModel> agents = agentService.getAllAgents();
+        boolean success = agents != null;
+        response.setMessage(success ? "Agents found" : "Agents not found");
+        response.setSuccess(success);
+        response.setData(agents);
+        return response;
+
     }
 
     @PostMapping
-    public @ResponseBody ApiResponse<Object> insertAgent(@RequestBody AgentModel agent) {
+    public @ResponseBody ApiResponse<Object> insertAgent(@RequestBody AgentModel agent){
         ApiResponse<Object> response = new ApiResponse<>();
         boolean success = agentService.insertAgent(agent);
         response.setMessage(success ? "Agent inserted" : "Agent not inserted");
@@ -33,15 +41,37 @@ public class AgentController {
     }
 
     @GetMapping("/{id}")
-    public @ResponseBody HashMap<String,Object> getAgent(@PathVariable String id) {
-        HashMap<String,Object> response=new HashMap<>();
-        response.put("message","data");
-        response.put("agent",agentService.getAgentById(id));
+    public @ResponseBody ApiResponse<AgentModel> getAgent(@PathVariable String id) {
+        ApiResponse<AgentModel> response = new ApiResponse<>();
+
+        AgentModel agent = agentService.getAgentById(id);
+        boolean success = agent != null;
+        response.setMessage(success ? "Agent found" : "Agent not found");
+        response.setData(agent);
+        response.setSuccess(success);
         return response;
     }
     @PutMapping("/{id}")
-    public @ResponseBody String updateAgent(@PathVariable String id, @RequestBody AgentModel agent) {
-        return agentService.updateAgentById(id, agent) ? "Agent updated" : "Agent not updated";
+    public @ResponseBody ApiResponse<Object> updateAgent(@PathVariable String id, @RequestBody AgentModel agent) {
+        ApiResponse<Object> response = new ApiResponse<>();
+
+        boolean success = agentService.updateAgentById(id, agent);
+        response.setMessage(success ? "Agent updated" : "Agent not updated");
+        response.setData(null);
+        response.setSuccess(success);
+        return response;
     }
+
+    @DeleteMapping("/{id}")
+    public @ResponseBody ApiResponse<Object> deleteAgent(@PathVariable String id) {
+        ApiResponse<Object> response = new ApiResponse<>();
+
+        boolean success = agentService.deleteAgentById(id);
+        response.setMessage(success ? "Agent deleted" : "Agent not deleted");
+        response.setData(null);
+        response.setSuccess(success);
+        return response;
+    }
+
 
 }

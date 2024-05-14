@@ -11,4 +11,5 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class AgentModel extends User {
     private String password;
+    private boolean isSupervisor;
 }

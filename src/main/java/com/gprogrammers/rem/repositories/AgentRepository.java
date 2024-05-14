@@ -10,4 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface AgentRepository extends MongoRepository<AgentModel, Long> {
     AgentModel findById(String id);
     AgentModel findByEmail(String email);
+
+    void deleteById(String id);
+
 }

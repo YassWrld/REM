@@ -44,10 +44,6 @@ public class AgentService {
                 return false;
             }
 
-
-
-
-
             String email = agent.getEmail();
 
             if(email != null){
@@ -76,7 +72,27 @@ public class AgentService {
             }
 
 
+            boolean isSupervisor = agent.isSupervisor();
+
+
+                originalAgent.setSupervisor(isSupervisor);
+
+
+
+
+
             agentRepository.save(originalAgent);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public boolean deleteAgentById(String id){
+        try{
+            agentRepository.deleteById(id);
             return true;
         }catch (Exception e){
             e.printStackTrace();
