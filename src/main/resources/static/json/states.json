@@ -1,0 +1,1274 @@
+[
+  {
+    "name": "Adrar",
+    "stateCode": 1,
+    "cities": [
+      {
+        "name": "Adrar",
+        "cityCode": 1
+      },
+      {
+        "name": "Charouine",
+        "cityCode": 2
+      },
+      {
+        "name": "Reggane",
+        "cityCode": 3
+      },
+      {
+        "name": "Tamentit",
+        "cityCode": 4
+      },
+      {
+        "name": "Tinerkouk",
+        "cityCode": 5
+      }
+    ]
+  },
+  {
+    "name": "Chlef",
+    "stateCode": 2,
+    "cities": [
+      {
+        "name": "Chlef",
+        "cityCode": 1
+      },
+      {
+        "name": "Abou el Hassen",
+        "cityCode": 2
+      },
+      {
+        "name": "Oued Fodda",
+        "cityCode": 3
+      },
+      {
+        "name": "El Karimia",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Laghouat",
+    "stateCode": 3,
+    "cities": [
+      {
+        "name": "Laghouat",
+        "cityCode": 1
+      },
+      {
+        "name": "Ksar El Hirane",
+        "cityCode": 2
+      },
+      {
+        "name": "Aflou",
+        "cityCode": 3
+      },
+      {
+        "name": "Brida",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Oum El Bouaghi",
+    "stateCode": 4,
+    "cities": [
+      {
+        "name": "Oum El Bouaghi",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Beida",
+        "cityCode": 2
+      },
+      {
+        "name": "Ain M'lila",
+        "cityCode": 3
+      },
+      {
+        "name": "Ksar Sbahi",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Batna",
+    "stateCode": 5,
+    "cities": [
+      {
+        "name": "Batna",
+        "cityCode": 1
+      },
+      {
+        "name": "Arris",
+        "cityCode": 2
+      },
+      {
+        "name": "Seriana",
+        "cityCode": 3
+      },
+      {
+        "name": "Ain Yagout",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Béjaïa",
+    "stateCode": 6,
+    "cities": [
+      {
+        "name": "Béjaïa",
+        "cityCode": 1
+      },
+      {
+        "name": "Akfadou",
+        "cityCode": 2
+      },
+      {
+        "name": "Amizour",
+        "cityCode": 3
+      },
+      {
+        "name": "Akbou",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Biskra",
+    "stateCode": 7,
+    "cities": [
+      {
+        "name": "Biskra",
+        "cityCode": 1
+      },
+      {
+        "name": "Ouled Djellal",
+        "cityCode": 2
+      },
+      {
+        "name": "Tolga",
+        "cityCode": 3
+      },
+      {
+        "name": "M'Lili",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Béchar",
+    "stateCode": 8,
+    "cities": [
+      {
+        "name": "Béchar",
+        "cityCode": 1
+      },
+      {
+        "name": "Abadla",
+        "cityCode": 2
+      },
+      {
+        "name": "Béni Abbès",
+        "cityCode": 3
+      },
+      {
+        "name": "Mogheul",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Blida",
+    "stateCode": 9,
+    "cities": [
+      {
+        "name": "Blida",
+        "cityCode": 1
+      },
+      {
+        "name": "Boufarik",
+        "cityCode": 2
+      },
+      {
+        "name": "Bouïnian",
+        "cityCode": 3
+      },
+      {
+        "name": "Bouira",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Bouira",
+    "stateCode": 10,
+    "cities": [
+      {
+        "name": "Bouira",
+        "cityCode": 1
+      },
+      {
+        "name": "Lakhdaria",
+        "cityCode": 2
+      },
+      {
+        "name": "M'chedallah",
+        "cityCode": 3
+      },
+      {
+        "name": "Kadiria",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tamanrasset",
+    "stateCode": 11,
+    "cities": [
+      {
+        "name": "Tamanrasset",
+        "cityCode": 1
+      },
+      {
+        "name": "In Guezzam",
+        "cityCode": 2
+      },
+      {
+        "name": "Tazrouk",
+        "cityCode": 3
+      },
+      {
+        "name": "Tin Zaouatine",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tébessa",
+    "stateCode": 12,
+    "cities": [
+      {
+        "name": "Tébessa",
+        "cityCode": 1
+      },
+      {
+        "name": "Bir el Ater",
+        "cityCode": 2
+      },
+      {
+        "name": "El Ogla",
+        "cityCode": 3
+      },
+      {
+        "name": "Negrine",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tlemcen",
+    "stateCode": 13,
+    "cities": [
+      {
+        "name": "Tlemcen",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Fezza",
+        "cityCode": 2
+      },
+      {
+        "name": "Ghazaouet",
+        "cityCode": 3
+      },
+      {
+        "name": "Maghnia",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tiaret",
+    "stateCode": 14,
+    "cities": [
+      {
+        "name": "Tiaret",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Deheb",
+        "cityCode": 2
+      },
+      {
+        "name": "Dahmouni",
+        "cityCode": 3
+      },
+      {
+        "name": "Ksar Chellala",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tizi Ouzou",
+    "stateCode": 15,
+    "cities": [
+      {
+        "name": "Tizi Ouzou",
+        "cityCode": 1
+      },
+      {
+        "name": "Azazga",
+        "cityCode": 2
+      },
+      {
+        "name": "Azeffoun",
+        "cityCode": 3
+      },
+      {
+        "name": "Boghni",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Alger",
+    "stateCode": 16,
+    "cities": [
+      {
+        "name": "Aïn Benian",
+        "cityCode": 1
+      },
+      {
+        "name": "Aïn Taya",
+        "cityCode": 2
+      },
+      {
+        "name": "Alger-Centre",
+        "cityCode": 3
+      },
+      {
+        "name": "Baba Hassen",
+        "cityCode": 4
+      },
+      {
+        "name": "Bab El Oued",
+        "cityCode": 5
+      },
+      {
+        "name": "Bab Ezzouar",
+        "cityCode": 6
+      },
+      {
+        "name": "Bachdjerrah",
+        "cityCode": 7
+      },
+      {
+        "name": "Baraki",
+        "cityCode": 8
+      },
+      {
+        "name": "Belouizdad",
+        "cityCode": 9
+      },
+      {
+        "name": "Ben Aknoun",
+        "cityCode": 10
+      },
+      {
+        "name": "Beni Messous",
+        "cityCode": 11
+      },
+      {
+        "name": "Birkhadem",
+        "cityCode": 12
+      },
+      {
+        "name": "Bir Mourad Raïs",
+        "cityCode": 13
+      },
+      {
+        "name": "Birtouta",
+        "cityCode": 14
+      },
+      {
+        "name": "Bologhine",
+        "cityCode": 15
+      },
+      {
+        "name": "Bordj El Bahri",
+        "cityCode": 16
+      },
+      {
+        "name": "Bordj El Kiffan",
+        "cityCode": 17
+      },
+      {
+        "name": "Bourouba",
+        "cityCode": 18
+      },
+      {
+        "name": "Bouzareah",
+        "cityCode": 19
+      },
+      {
+        "name": "Casbah",
+        "cityCode": 20
+      },
+      {
+        "name": "Chéraga",
+        "cityCode": 21
+      },
+      {
+        "name": "Dar El Beïda",
+        "cityCode": 22
+      },
+      {
+        "name": "Dely Ibrahim",
+        "cityCode": 23
+      },
+      {
+        "name": "Djasr Kasentina",
+        "cityCode": 24
+      },
+      {
+        "name": "Douera",
+        "cityCode": 25
+      },
+      {
+        "name": "Draria",
+        "cityCode": 26
+      },
+      {
+        "name": "El Achour",
+        "cityCode": 27
+      },
+      {
+        "name": "El Biar",
+        "cityCode": 28
+      },
+      {
+        "name": "El Hammamet",
+        "cityCode": 29
+      },
+      {
+        "name": "El Harrach",
+        "cityCode": 30
+      },
+      {
+        "name": "El Madania",
+        "cityCode": 31
+      },
+      {
+        "name": "El Marsa",
+        "cityCode": 32
+      },
+      {
+        "name": "El Mouradia",
+        "cityCode": 33
+      },
+      {
+        "name": "El Magharia",
+        "cityCode": 34
+      },
+      {
+        "name": "H'raoua",
+        "cityCode": 35
+      },
+      {
+        "name": "Hussein-Dey",
+        "cityCode": 36
+      },
+      {
+        "name": "Hydra",
+        "cityCode": 37
+      },
+      {
+        "name": "Khraïssia",
+        "cityCode": 38
+      },
+      {
+        "name": "Kouba",
+        "cityCode": 39
+      },
+      {
+        "name": "Les Eucalyptus",
+        "cityCode": 40
+      },
+      {
+        "name": "Mahelma",
+        "cityCode": 41
+      },
+      {
+        "name": "Mohammadia",
+        "cityCode": 42
+      },
+      {
+        "name": "Oued Koriche",
+        "cityCode": 43
+      },
+      {
+        "name": "Oued Smar",
+        "cityCode": 44
+      },
+      {
+        "name": "Ouled Chebel",
+        "cityCode": 45
+      },
+      {
+        "name": "Ouled Fayet",
+        "cityCode": 46
+      },
+      {
+        "name": "Rahmania",
+        "cityCode": 47
+      },
+      {
+        "name": "Raïs Hamidou",
+        "cityCode": 48
+      },
+      {
+        "name": "Réghaïa",
+        "cityCode": 49
+      },
+      {
+        "name": "Rouïba",
+        "cityCode": 50
+      },
+      {
+        "name": "Saoula",
+        "cityCode": 51
+      },
+      {
+        "name": "Sidi M'Hamed",
+        "cityCode": 52
+      },
+      {
+        "name": "Sidi Moussa",
+        "cityCode": 53
+      },
+      {
+        "name": "Souidania",
+        "cityCode": 54
+      },
+      {
+        "name": "Staoueli",
+        "cityCode": 55
+      },
+      {
+        "name": "Tessala El Merdja",
+        "cityCode": 56
+      },
+      {
+        "name": "Zéralda",
+        "cityCode": 57
+      }
+    ]
+  },
+  {
+    "name": "Djelfa",
+    "stateCode": 17,
+    "cities": [
+      {
+        "name": "Djelfa",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain el Ibel",
+        "cityCode": 2
+      },
+      {
+        "name": "El Guedid",
+        "cityCode": 3
+      },
+      {
+        "name": "Had Sahary",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Jijel",
+    "stateCode": 18,
+    "cities": [
+      {
+        "name": "Jijel",
+        "cityCode": 1
+      },
+      {
+        "name": "Chekfa",
+        "cityCode": 2
+      },
+      {
+        "name": "El Aouana",
+        "cityCode": 3
+      },
+      {
+        "name": "El Milia",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Sétif",
+    "stateCode": 19,
+    "cities": [
+      {
+        "name": "Sétif",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Abessa",
+        "cityCode": 2
+      },
+      {
+        "name": "Bir El Arch",
+        "cityCode": 3
+      },
+      {
+        "name": "Bougaa",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Saïda",
+    "stateCode": 20,
+    "cities": [
+      {
+        "name": "Saïda",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain el Hadjar",
+        "cityCode": 2
+      },
+      {
+        "name": "El Hassasna",
+        "cityCode": 3
+      },
+      {
+        "name": "Ouled Khaled",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Skikda",
+    "stateCode": 21,
+    "cities": [
+      {
+        "name": "Skikda",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Charchar",
+        "cityCode": 2
+      },
+      {
+        "name": "Beni Zid",
+        "cityCode": 3
+      },
+      {
+        "name": "El Hadaiek",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Sidi Bel Abbès",
+    "stateCode": 22,
+    "cities": [
+      {
+        "name": "Sidi Bel Abbès",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Tindamine",
+        "cityCode": 2
+      },
+      {
+        "name": "Mostefa Ben Brahim",
+        "cityCode": 3
+      },
+      {
+        "name": "Tessala",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Annaba",
+    "stateCode": 23,
+    "cities": [
+      {
+        "name": "Annaba",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Berda",
+        "cityCode": 2
+      },
+      {
+        "name": "Berrahal",
+        "cityCode": 3
+      },
+      {
+        "name": "Chetaibi",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Guelma",
+    "stateCode": 24,
+    "cities": [
+      {
+        "name": "Guelma",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Hessania",
+        "cityCode": 2
+      },
+      {
+        "name": "Belkheir",
+        "cityCode": 3
+      },
+      {
+        "name": "Bouati Mahmoud",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Constantine",
+    "stateCode": 25,
+    "cities": [
+      {
+        "name": "Constantine",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Abid",
+        "cityCode": 2
+      },
+      {
+        "name": "Beni Hamiden",
+        "cityCode": 3
+      },
+      {
+        "name": "Didouche Mourad",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Médéa",
+    "stateCode": 26,
+    "cities": [
+      {
+        "name": "Médéa",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Bessem",
+        "cityCode": 2
+      },
+      {
+        "name": "Aziz",
+        "cityCode": 3
+      },
+      {
+        "name": "Beni Slimane",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Mostaganem",
+    "stateCode": 27,
+    "cities": [
+      {
+        "name": "Mostaganem",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Nouissy",
+        "cityCode": 2
+      },
+      {
+        "name": "Ain Tadles",
+        "cityCode": 3
+      },
+      {
+        "name": "Ain Tedles",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "M'Sila",
+    "stateCode": 28,
+    "cities": [
+      {
+        "name": "M'Sila",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain el Hadjel",
+        "cityCode": 2
+      },
+      {
+        "name": "Ain Errich",
+        "cityCode": 3
+      },
+      {
+        "name": "Belaiba",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Mascara",
+    "stateCode": 29,
+    "cities": [
+      {
+        "name": "Mascara",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Fares",
+        "cityCode": 2
+      },
+      {
+        "name": "Ain Ferah",
+        "cityCode": 3
+      },
+      {
+        "name": "Ain Fekan",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Ouargla",
+    "stateCode": 30,
+    "cities": [
+      {
+        "name": "Ouargla",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Beida",
+        "cityCode": 2
+      },
+      {
+        "name": "Ain el Beida",
+        "cityCode": 3
+      },
+      {
+        "name": "Bordj el Haouasse",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Oran",
+    "stateCode": 31,
+    "cities": [
+      {
+        "name": "Oran",
+        "cityCode": 1
+      },
+      {
+        "name": "Aïn El Turk",
+        "cityCode": 2
+      },
+      {
+        "name": "Arzew",
+        "cityCode": 3
+      },
+      {
+        "name": "Bethioua",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "El Bayadh",
+    "stateCode": 32,
+    "cities": [
+      {
+        "name": "El Bayadh",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain El Orak",
+        "cityCode": 2
+      },
+      {
+        "name": "Arbaouat",
+        "cityCode": 3
+      },
+      {
+        "name": "Brezina",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Illizi",
+    "stateCode": 33,
+    "cities": [
+      {
+        "name": "Illizi",
+        "cityCode": 1
+      },
+      {
+        "name": "Djanet",
+        "cityCode": 2
+      },
+      {
+        "name": "In Aménas",
+        "cityCode": 3
+      },
+      {
+        "name": "In Salah",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Bordj Bou Arréridj",
+    "stateCode": 34,
+    "cities": [
+      {
+        "name": "Bordj Bou Arréridj",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Taghrout",
+        "cityCode": 2
+      },
+      {
+        "name": "Bir Kasdali",
+        "cityCode": 3
+      },
+      {
+        "name": "Bordj Zemmoura",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Boumerdès",
+    "stateCode": 35,
+    "cities": [
+      {
+        "name": "Boumerdès",
+        "cityCode": 1
+      },
+      {
+        "name": "Afir",
+        "cityCode": 2
+      },
+      {
+        "name": "Boudouaou",
+        "cityCode": 3
+      },
+      {
+        "name": "Boudouaou El Bahri",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "El Tarf",
+    "stateCode": 36,
+    "cities": [
+      {
+        "name": "El Tarf",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain El Assel",
+        "cityCode": 2
+      },
+      {
+        "name": "Bouhadjar",
+        "cityCode": 3
+      },
+      {
+        "name": "Bouhamed",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tindouf",
+    "stateCode": 37,
+    "cities": [
+      {
+        "name": "Tindouf",
+        "cityCode": 1
+      },
+      {
+        "name": "Oum el Assel",
+        "cityCode": 2
+      },
+      {
+        "name": "Reggane",
+        "cityCode": 3
+      },
+      {
+        "name": "Tsabit",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tissemsilt",
+    "stateCode": 38,
+    "cities": [
+      {
+        "name": "Tissemsilt",
+        "cityCode": 1
+      },
+      {
+        "name": "Amara",
+        "cityCode": 2
+      },
+      {
+        "name": "Bordj Bou Naama",
+        "cityCode": 3
+      },
+      {
+        "name": "Theniet El Had",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "El Oued",
+    "stateCode": 39,
+    "cities": [
+      {
+        "name": "El Oued",
+        "cityCode": 1
+      },
+      {
+        "name": "Guemar",
+        "cityCode": 2
+      },
+      {
+        "name": "Reguiba",
+        "cityCode": 3
+      },
+      {
+        "name": "Taghzout",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Khenchela",
+    "stateCode": 40,
+    "cities": [
+      {
+        "name": "Khenchela",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Touila",
+        "cityCode": 2
+      },
+      {
+        "name": "Babar",
+        "cityCode": 3
+      },
+      {
+        "name": "Chechar",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Souk Ahras",
+    "stateCode": 41,
+    "cities": [
+      {
+        "name": "Souk Ahras",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Zana",
+        "cityCode": 2
+      },
+      {
+        "name": "Bir Bouhouche",
+        "cityCode": 3
+      },
+      {
+        "name": "Haddada",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Tipaza",
+    "stateCode": 42,
+    "cities": [
+      {
+        "name": "Tipaza",
+        "cityCode": 1
+      },
+      {
+        "name": "Aghabal",
+        "cityCode": 2
+      },
+      {
+        "name": "Ahmer El Ain",
+        "cityCode": 3
+      },
+      {
+        "name": "Bourkika",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Mila",
+    "stateCode": 43,
+    "cities": [
+      {
+        "name": "Mila",
+        "cityCode": 1
+      },
+      {
+        "name": "Ain Beida",
+        "cityCode": 2
+      },
+      {
+        "name": "Chelghoum Laid",
+        "cityCode": 3
+      },
+      {
+        "name": "Grarem Gouga",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Aïn Defla",
+    "stateCode": 44,
+    "cities": [
+      {
+        "name": "Aïn Defla",
+        "cityCode": 1
+      },
+      {
+        "name": "Aïn Lechiakh",
+        "cityCode": 2
+      },
+      {
+        "name": "Aïn Torki",
+        "cityCode": 3
+      },
+      {
+        "name": "Bir Ould Khelifa",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Naâma",
+    "stateCode": 45,
+    "cities": [
+      {
+        "name": "Naâma",
+        "cityCode": 1
+      },
+      {
+        "name": "Aïn Ben Khelil",
+        "cityCode": 2
+      },
+      {
+        "name": "Aïn Kihal",
+        "cityCode": 3
+      },
+      {
+        "name": "Mécheria",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Aïn Témouchent",
+    "stateCode": 46,
+    "cities": [
+      {
+        "name": "Aïn Témouchent",
+        "cityCode": 1
+      },
+      {
+        "name": "Aghlal",
+        "cityCode": 2
+      },
+      {
+        "name": "Bouzedjar",
+        "cityCode": 3
+      },
+      {
+        "name": "Chentouf",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Ghardaïa",
+    "stateCode": 47,
+    "cities": [
+      {
+        "name": "Ghardaïa",
+        "cityCode": 1
+      },
+      {
+        "name": "Bounoura",
+        "cityCode": 2
+      },
+      {
+        "name": "El Guerrara",
+        "cityCode": 3
+      },
+      {
+        "name": "Metlili",
+        "cityCode": 4
+      }
+    ]
+  },
+  {
+    "name": "Relizane",
+    "stateCode": 48,
+    "cities": [
+      {
+        "name": "Relizane",
+        "cityCode": 1
+      },
+      {
+        "name": "Aïn El Hadjel",
+        "cityCode": 2
+      },
+      {
+        "name": "Ammi Moussa",
+        "cityCode": 3
+      },
+      {
+        "name": "Belaassel Bouzegza",
+        "cityCode": 4
+      }
+    ]
+  }
+]

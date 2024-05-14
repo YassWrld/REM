@@ -11,23 +11,23 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-@Document(collection = "property")
+@Document(collection = "properties")
 @Data
 public class PropertyModel {
     @MongoId
     private String id;
-    private String title;
-    private Location location;
     private PropertyType type;
+    private String title;
+    private String description;
     private float area;
+    private Location location;
     private PropertyStatus status;
     private int price;
-    private String description;
     private ContractType contractType = null;
     private String ownerName;
     private String ownerEmail;
     private String ownerPhone;
-    private String[] images;
+    private String[] media;
     private String clientId;
     private String agentId;
 }

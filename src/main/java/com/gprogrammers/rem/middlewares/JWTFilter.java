@@ -1,4 +1,7 @@
 package com.gprogrammers.rem.middlewares;
+import com.gprogrammers.rem.models.AgentModel;
+import com.gprogrammers.rem.services.AgentService;
+import com.gprogrammers.rem.types.ApiErrorResponse;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,20 +17,39 @@ public class JWTFilter extends OncePerRequestFilter {
     @Autowired
     private JWTUtil jwtUtil;
 
+    @Autowired
+    private AgentService agentService;
+
+    final private String authPath = "/auth";
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+
         String path = request.getRequestURI();
-        if(path.startsWith("/auth")){
+        if(path.startsWith(authPath)){
             filterChain.doFilter(request, response);
             return;
         }
 
+        ApiErrorResponse errorResponse = new ApiErrorResponse();
+
+
+
         final String authorizationHeader = request.getHeader("Authorization");
 
         if(authorizationHeader==null || !authorizationHeader.startsWith("Bearer ")){
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            errorResponse.setError("Authorization header not found");
+            response.setHeader("Content-Type", "application/json");
+            response.getWriter().write(errorResponse.toString());
             return;
+
+
         }
+
+
 
 
         String token = authorizationHeader.replace("Bearer ", "").trim();
@@ -35,20 +57,55 @@ public class JWTFilter extends OncePerRequestFilter {
         boolean isValid=jwtUtil.validateToken(token);
 
         if(!isValid){
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            errorResponse.setError("Invalid token");
+            response.setHeader("Content-Type", "application/json");
+            response.getWriter().write(errorResponse.toString());
             return;
+
         }
 
         String id=jwtUtil.extractId(token);
 
         if(id==null){
-            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            errorResponse.setError("Invalid token");
+            response.setHeader("Content-Type", "application/json");
+            response.getWriter().write(errorResponse.toString());
             return;
         }
 
+        AgentModel agentAuth = agentService.getAgentById(id);
+
+        if(agentAuth==null){
+
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            errorResponse.setError("Agent not found");
+            response.setHeader("Content-Type", "application/json");
+            response.getWriter().write(errorResponse.toString());
+            return;
+
+        }
+
+        if(!agentAuth.isSupervisor() && path.startsWith("/agent")){
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            errorResponse.setError("Agent not authorized");
+            response.setHeader("Content-Type", "application/json");
+            response.getWriter().write(errorResponse.toString());
+            return;
+
+        }
+
+        request.setAttribute("authId", id);
 
 
 
         filterChain.doFilter(request, response);
     }
+
+
+
+
+
+
 }

@@ -3,20 +3,17 @@ package com.gprogrammers.rem.controllers;
 import com.gprogrammers.rem.types.ApiErrorResponse;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.StringJoiner;
 
 
 @ControllerAdvice
 public class CustomErrorController implements ErrorController {
 
 
-    //not found error
+
+
+
 
     @ExceptionHandler(NoResourceFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND) //404 Page not found
