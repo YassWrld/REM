@@ -9,27 +9,26 @@ import com.gprogrammers.rem.repositories.PropertyRepository;
 import com.gprogrammers.rem.types.Location;
 import com.gprogrammers.rem.types.enums.ContractType;
 import com.gprogrammers.rem.types.enums.PropertyStatus;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class PropertyService {
-    @Autowired
-    private PropertyRepository propertyRepository;
+    private final PropertyRepository propertyRepository;
 
-    @Autowired
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
-    @Autowired
-    private AgentRepository agentRepository;
+
+    private final AgentRepository agentRepository;
 
     public List<PropertyModel> getAllProperties() {
-        try{
-        return propertyRepository.findAll();
+        try {
+            return propertyRepository.findAll();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -133,7 +132,6 @@ public class PropertyService {
     }
 
 
-
     public boolean deletePropertyById(String id) {
         try {
             PropertyModel originalProperty = propertyRepository.findById(id);
@@ -148,7 +146,6 @@ public class PropertyService {
             return false;
         }
     }
-
 
 
     public boolean assignPropertyToClient(String propertyId, String clientId) {
@@ -199,25 +196,20 @@ public class PropertyService {
     }
 
 
-
-
-    public  boolean confirmProperty(String propertyId){
-        try{
-            PropertyModel property=propertyRepository.findById(propertyId);
-            if(property==null){
+    public boolean confirmProperty(String propertyId) {
+        try {
+            PropertyModel property = propertyRepository.findById(propertyId);
+            if (property == null) {
                 return false;
             }
             property.setStatus(PropertyStatus.Confirmed);
             propertyRepository.save(property);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
-
-
-
 
 
 }

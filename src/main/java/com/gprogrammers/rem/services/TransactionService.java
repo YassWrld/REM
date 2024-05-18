@@ -2,20 +2,26 @@ package com.gprogrammers.rem.services;
 
 import com.gprogrammers.rem.models.TransactionModel;
 import com.gprogrammers.rem.repositories.TransactionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class TransactionService {
-    @Autowired
-    private TransactionRepository transactionRepository;
+
+    private final TransactionRepository transactionRepository;
 
 
-    public List<TransactionModel> getAllTransactions() {return transactionRepository.findAll();}
-    public TransactionModel getTransactionById(String id) {return transactionRepository.findById(id);}
+    public List<TransactionModel> getAllTransactions() {
+        return transactionRepository.findAll();
+    }
+
+    public TransactionModel getTransactionById(String id) {
+        return transactionRepository.findById(id);
+    }
 
     public boolean insertTransaction(TransactionModel transaction) {
         try {
@@ -27,27 +33,27 @@ public class TransactionService {
         }
     }
 
-    public boolean updateTransactionById(String id,TransactionModel transaction) {
+    public boolean updateTransactionById(String id, TransactionModel transaction) {
         try {
-            TransactionModel originalTransacation = transactionRepository.findById(id);
+            TransactionModel originalTransaction = transactionRepository.findById(id);
 
-            if (originalTransacation == null) {
+            if (originalTransaction == null) {
                 return false;
             }
 
             String contractId = transaction.getContractId();
 
             if (contractId == null) {
-                originalTransacation.setContractId(id);
+                originalTransaction.setContractId(id);
             }
 
             Date date = transaction.getDate();
 
             if (date == null) {
-                originalTransacation.setDate(date);
+                originalTransaction.setDate(date);
             }
 
-            transactionRepository.save(originalTransacation);
+            transactionRepository.save(originalTransaction);
             return true;
 
         } catch (Exception e) {
@@ -56,11 +62,11 @@ public class TransactionService {
         }
     }
 
-    public boolean deleteTransactionById(String id){
-        try{
+    public boolean deleteTransactionById(String id) {
+        try {
             transactionRepository.deleteById(id);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

@@ -1,11 +1,9 @@
 package com.gprogrammers.rem.controllers;
 
-import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.models.PropertyModel;
 import com.gprogrammers.rem.services.PropertyService;
 import com.gprogrammers.rem.types.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.support.NullValue;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -13,10 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/property")
+@AllArgsConstructor
 public class PropertyController {
 
-    @Autowired
-    private PropertyService propertyService;
+
+    private final PropertyService propertyService;
+
 
     @GetMapping
     public @ResponseBody ApiResponse<List<PropertyModel>> getAllProperties() {
@@ -101,8 +101,6 @@ public class PropertyController {
         response.setData(null);
         return response;
     }
-
-
 
 
 }

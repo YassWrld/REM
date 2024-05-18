@@ -2,7 +2,7 @@ package com.gprogrammers.rem.services;
 
 import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.utils.JWTUtil;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,12 +10,13 @@ import java.io.File;
 import java.nio.file.Files;
 
 @Service
+@AllArgsConstructor
 public class AuthService {
-    @Autowired
-    private AgentService agentService;
 
-    @Autowired
-    private JWTUtil jwtUtil;
+    private final AgentService agentService;
+
+
+    private final JWTUtil jwtUtil;
 
     public String authenticate(String email, String password) {
         AgentModel agent = agentService.getAgentByEmail(email);
@@ -32,6 +33,12 @@ public class AuthService {
         return null;
     }
 
+
+    public AgentModel getAgent(String id) {
+        return agentService.getAgentById(id);
+    }
+
+
     public String upload(MultipartFile file) {
 
         //save file to /static folder
@@ -46,7 +53,6 @@ public class AuthService {
             e.printStackTrace();
             return null;
         }
-
 
 
     }

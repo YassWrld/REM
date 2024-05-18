@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface VisitRepository extends MongoRepository<VisitModel, Long> {
     VisitModel findById(String id);
+
     void deleteById(String id);
 
 }

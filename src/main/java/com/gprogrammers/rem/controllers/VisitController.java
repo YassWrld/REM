@@ -1,21 +1,21 @@
 package com.gprogrammers.rem.controllers;
+
 import com.gprogrammers.rem.models.VisitModel;
 import com.gprogrammers.rem.services.VisitService;
 import com.gprogrammers.rem.types.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @RestController
 @RequestMapping("/visit")
+@AllArgsConstructor
 public class VisitController {
-    @Autowired
-    private VisitService visitService;
+
+    private final VisitService visitService;
+
 
     @GetMapping
     public @ResponseBody ApiResponse<List<VisitModel>> getAllVisits() {
@@ -31,7 +31,7 @@ public class VisitController {
     }
 
     @PostMapping
-    public @ResponseBody ApiResponse<Object> insertVisit(@RequestBody VisitModel visit){
+    public @ResponseBody ApiResponse<Object> insertVisit(@RequestBody VisitModel visit) {
         ApiResponse<Object> response = new ApiResponse<>();
         boolean success = visitService.insertVisit(visit);
         response.setMessage(success ? "Visit inserted" : "Visit not inserted");
@@ -51,6 +51,7 @@ public class VisitController {
         response.setSuccess(success);
         return response;
     }
+
     @PutMapping("/{id}")
     public @ResponseBody ApiResponse<Object> updateVisit(@PathVariable String id, @RequestBody VisitModel visit) {
         ApiResponse<Object> response = new ApiResponse<>();
@@ -72,10 +73,6 @@ public class VisitController {
         response.setSuccess(success);
         return response;
     }
-
-
-
-
 
 
 }

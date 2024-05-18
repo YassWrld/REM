@@ -1,21 +1,22 @@
 package com.gprogrammers.rem.controllers;
+
 import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.services.AgentService;
 import com.gprogrammers.rem.types.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-
+@Controller
 @RestController
 @RequestMapping("/agent")
+@AllArgsConstructor
 public class AgentController {
-    @Autowired
-    private AgentService agentService;
+
+    private final AgentService agentService;
+
 
     @GetMapping
     public @ResponseBody ApiResponse<List<AgentModel>> getAllAgents() {
@@ -23,20 +24,21 @@ public class AgentController {
         ApiResponse<List<AgentModel>> response = new ApiResponse<>();
         List<AgentModel> agents = agentService.getAllAgents();
         boolean success = agents != null;
-        response.setMessage(success ? "Agents found" : "Agents not found");
-        response.setSuccess(success);
-        response.setData(agents);
+        response
+                .setMessage(success ? "Agents found" : "Agents not found")
+                .setSuccess(success)
+                .setData(agents);
         return response;
 
     }
 
     @PostMapping
-    public @ResponseBody ApiResponse<Object> insertAgent(@RequestBody AgentModel agent){
+    public @ResponseBody ApiResponse<Object> insertAgent(@RequestBody AgentModel agent) {
         ApiResponse<Object> response = new ApiResponse<>();
         boolean success = agentService.insertAgent(agent);
-        response.setMessage(success ? "Agent inserted" : "Agent not inserted");
-        response.setSuccess(success);
-        response.setData(null);
+        response.setMessage(success ? "Agent inserted" : "Agent not inserted")
+                .setSuccess(success)
+                .setData(null);
         return response;
     }
 
@@ -46,19 +48,20 @@ public class AgentController {
 
         AgentModel agent = agentService.getAgentById(id);
         boolean success = agent != null;
-        response.setMessage(success ? "Agent found" : "Agent not found");
-        response.setData(agent);
-        response.setSuccess(success);
+        response.setMessage(success ? "Agent found" : "Agent not found")
+                .setData(agent)
+                .setSuccess(success);
         return response;
     }
+
     @PutMapping("/{id}")
     public @ResponseBody ApiResponse<Object> updateAgent(@PathVariable String id, @RequestBody AgentModel agent) {
         ApiResponse<Object> response = new ApiResponse<>();
 
         boolean success = agentService.updateAgentById(id, agent);
-        response.setMessage(success ? "Agent updated" : "Agent not updated");
-        response.setData(null);
-        response.setSuccess(success);
+        response.setMessage(success ? "Agent updated" : "Agent not updated")
+                .setData(null)
+                .setSuccess(success);
         return response;
     }
 
@@ -67,9 +70,21 @@ public class AgentController {
         ApiResponse<Object> response = new ApiResponse<>();
 
         boolean success = agentService.deleteAgentById(id);
-        response.setMessage(success ? "Agent deleted" : "Agent not deleted");
-        response.setData(null);
-        response.setSuccess(success);
+        response.setMessage(success ? "Agent deleted" : "Agent not deleted")
+                .setData(null)
+                .setSuccess(success);
+        return response;
+    }
+
+
+    @GetMapping("/top")
+    public @ResponseBody ApiResponse<List<AgentModel>> getTopAgents() {
+        ApiResponse<List<AgentModel>> response = new ApiResponse<>();
+        List<AgentModel> agents = agentService.getTopAgents();
+        boolean success = agents != null;
+        response.setMessage(success ? "Top Agents found" : "Top Agents not found")
+                .setSuccess(success)
+                .setData(agents);
         return response;
     }
 
