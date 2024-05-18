@@ -71,13 +71,6 @@ public class VisitService {
                 originalVisit.setPropertyId(propertyId);
             }
 
-
-
-
-
-
-
-
             visitRepository.save(originalVisit);
             return true;
         }catch (Exception e){

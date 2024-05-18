@@ -84,7 +84,7 @@ public class PropertyService {
                 originalProperty.setStatus(status);
             }
 
-            int price = property.getPrice();
+            long price = property.getPrice();
             if (price > 0) {
                 originalProperty.setPrice(price);
             }

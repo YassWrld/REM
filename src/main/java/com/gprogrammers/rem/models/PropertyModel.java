@@ -22,7 +22,7 @@ public class PropertyModel {
     private float area;
     private Location location;
     private PropertyStatus status;
-    private int price;
+    private long price;
     private ContractType contractType = null;
     private String ownerName;
     private String ownerEmail;
