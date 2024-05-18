@@ -9,5 +9,5 @@ import lombok.Data;
 public class Location {
     public int stateCode;
     public int cityCode;
-    public String address=null;
+    public String address = null;
 }

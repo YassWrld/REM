@@ -1,17 +1,20 @@
 package com.gprogrammers.rem.controllers;
+
 import com.gprogrammers.rem.models.ContractModel;
 import com.gprogrammers.rem.services.ContractService;
 import com.gprogrammers.rem.types.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/contract")
+@AllArgsConstructor
 public class ContractController {
-    @Autowired
-    private ContractService contractService;
+
+    private final ContractService contractService;
 
     @GetMapping
     public @ResponseBody ApiResponse<List<ContractModel>> getAllContracts() {
@@ -27,7 +30,7 @@ public class ContractController {
     }
 
     @PostMapping
-    public @ResponseBody ApiResponse<Object> insertContract(@RequestBody ContractModel contract){
+    public @ResponseBody ApiResponse<Object> insertContract(@RequestBody ContractModel contract) {
         ApiResponse<Object> response = new ApiResponse<>();
         boolean success = contractService.insertContract(contract);
         response.setMessage(success ? "Contract inserted" : "Contract not inserted");
@@ -47,6 +50,7 @@ public class ContractController {
         response.setSuccess(success);
         return response;
     }
+
     @PutMapping("/{id}")
     public @ResponseBody ApiResponse<Object> updateContract(@PathVariable String id, @RequestBody ContractModel contract) {
         ApiResponse<Object> response = new ApiResponse<>();

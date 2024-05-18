@@ -1,17 +1,20 @@
 package com.gprogrammers.rem.controllers;
+
 import com.gprogrammers.rem.models.TransactionModel;
 import com.gprogrammers.rem.services.TransactionService;
 import com.gprogrammers.rem.types.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/transaction")
+@AllArgsConstructor
 public class TransactionController {
-    @Autowired
-    private TransactionService transactionService;
+
+    private final TransactionService transactionService;
 
     @GetMapping
     public @ResponseBody ApiResponse<List<TransactionModel>> getAllTransactions() {
@@ -27,7 +30,7 @@ public class TransactionController {
     }
 
     @PostMapping
-    public @ResponseBody ApiResponse<Object> insertTransaction(@RequestBody TransactionModel transaction){
+    public @ResponseBody ApiResponse<Object> insertTransaction(@RequestBody TransactionModel transaction) {
         ApiResponse<Object> response = new ApiResponse<>();
         boolean success = transactionService.insertTransaction(transaction);
         response.setMessage(success ? "Transaction inserted" : "Transaction not inserted");
@@ -47,6 +50,7 @@ public class TransactionController {
         response.setSuccess(success);
         return response;
     }
+
     @PutMapping("/{id}")
     public @ResponseBody ApiResponse<Object> updateTransaction(@PathVariable String id, @RequestBody TransactionModel transaction) {
         ApiResponse<Object> response = new ApiResponse<>();

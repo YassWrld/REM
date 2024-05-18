@@ -6,8 +6,6 @@ import com.gprogrammers.rem.types.enums.ContractType;
 import com.gprogrammers.rem.types.enums.PropertyStatus;
 import com.gprogrammers.rem.types.enums.PropertyType;
 import lombok.Data;
-import org.springframework.data.annotation.Reference;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -28,6 +26,6 @@ public class PropertyModel {
     private String ownerEmail;
     private String ownerPhone;
     private String[] media;
-    private String clientId;
-    private String agentId;
+    private String clientId = null;
+    private String agentId = null;
 }

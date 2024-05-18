@@ -7,6 +7,7 @@ import com.gprogrammers.rem.types.enums.PropertyType;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 @EqualsAndHashCode(callSuper = true)
 
 @Document(collection = "clients")
@@ -16,4 +17,5 @@ public class ClientModel extends User {
     private PropertyType propertyType;
     private Location location;
     private ContractType contractType;
+
 }

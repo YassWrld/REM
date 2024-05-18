@@ -6,16 +6,17 @@ import com.gprogrammers.rem.repositories.ClientRepository;
 import com.gprogrammers.rem.types.Location;
 import com.gprogrammers.rem.types.enums.ContractType;
 import com.gprogrammers.rem.types.enums.PropertyType;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
+@AllArgsConstructor
 public class ClientService {
-    @Autowired
-    private ClientRepository clientRepository;
+
+    private final ClientRepository clientRepository;
 
 
     public List<ClientModel> getAllClients() {
@@ -116,8 +117,6 @@ public class ClientService {
             return false;
         }
     }
-
-
 
 
 }

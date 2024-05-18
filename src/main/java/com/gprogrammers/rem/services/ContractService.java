@@ -2,20 +2,25 @@ package com.gprogrammers.rem.services;
 
 import com.gprogrammers.rem.models.ContractModel;
 import com.gprogrammers.rem.repositories.ContractRepository;
-import com.gprogrammers.rem.repositories.VisitRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ContractService {
-    @Autowired
-    private ContractRepository contractRepository;
+
+    private final ContractRepository contractRepository;
 
 
-    public List<ContractModel> getAllContracts() {return contractRepository.findAll();}
-    public ContractModel getContractById(String id) {return contractRepository.findById(id);}
+    public List<ContractModel> getAllContracts() {
+        return contractRepository.findAll();
+    }
+
+    public ContractModel getContractById(String id) {
+        return contractRepository.findById(id);
+    }
 
     public boolean insertContract(ContractModel contract) {
         try {
@@ -27,7 +32,7 @@ public class ContractService {
         }
     }
 
-    public boolean updateContractById(String id,ContractModel contract) {
+    public boolean updateContractById(String id, ContractModel contract) {
         try {
             ContractModel originalContract = contractRepository.findById(id);
 
@@ -67,9 +72,9 @@ public class ContractService {
 
             boolean feesOnClient = contract.isFeesOnClient();
 
-  
-               originalContract.setFeesOnClient(feesOnClient);
-            
+
+            originalContract.setFeesOnClient(feesOnClient);
+
 
             contractRepository.save(originalContract);
             return true;
@@ -80,11 +85,11 @@ public class ContractService {
         }
     }
 
-    public boolean deleteContractById(String id){
-        try{
+    public boolean deleteContractById(String id) {
+        try {
             contractRepository.deleteById(id);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

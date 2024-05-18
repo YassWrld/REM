@@ -5,14 +5,17 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Accessors(chain = true)
 public class ApiErrorResponse {
-    public String error;
-    public String stackTrace=null;
     final public boolean success = false;
+    public String error;
+    public String stackTrace = null;
 
     @Override
     public String toString() {

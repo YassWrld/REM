@@ -1,33 +1,36 @@
 package com.gprogrammers.rem.middlewares;
+
 import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.services.AgentService;
 import com.gprogrammers.rem.types.ApiErrorResponse;
-import jakarta.servlet.*;
+import com.gprogrammers.rem.utils.JWTUtil;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
 import java.io.IOException;
-import com.gprogrammers.rem.utils.JWTUtil;
 
 
 @Component
+@AllArgsConstructor
 public class JWTFilter extends OncePerRequestFilter {
-    @Autowired
-    private JWTUtil jwtUtil;
 
-    @Autowired
-    private AgentService agentService;
+    private final JWTUtil jwtUtil;
 
-    final private String authPath = "/auth";
+    private final AgentService agentService;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
 
         String path = request.getRequestURI();
-        if(path.startsWith(authPath)){
+        String authPath = "/auth/login";
+        if (path.startsWith(authPath)) {
             filterChain.doFilter(request, response);
             return;
         }
@@ -35,10 +38,9 @@ public class JWTFilter extends OncePerRequestFilter {
         ApiErrorResponse errorResponse = new ApiErrorResponse();
 
 
-
         final String authorizationHeader = request.getHeader("Authorization");
 
-        if(authorizationHeader==null || !authorizationHeader.startsWith("Bearer ")){
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
 
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             errorResponse.setError("Authorization header not found");
@@ -50,13 +52,11 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
 
-
-
         String token = authorizationHeader.replace("Bearer ", "").trim();
 
-        boolean isValid=jwtUtil.validateToken(token);
+        boolean isValid = jwtUtil.validateToken(token);
 
-        if(!isValid){
+        if (!isValid) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             errorResponse.setError("Invalid token");
             response.setHeader("Content-Type", "application/json");
@@ -65,9 +65,9 @@ public class JWTFilter extends OncePerRequestFilter {
 
         }
 
-        String id=jwtUtil.extractId(token);
+        String id = jwtUtil.extractId(token);
 
-        if(id==null){
+        if (id == null) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             errorResponse.setError("Invalid token");
             response.setHeader("Content-Type", "application/json");
@@ -77,7 +77,7 @@ public class JWTFilter extends OncePerRequestFilter {
 
         AgentModel agentAuth = agentService.getAgentById(id);
 
-        if(agentAuth==null){
+        if (agentAuth == null) {
 
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             errorResponse.setError("Agent not found");
@@ -87,7 +87,7 @@ public class JWTFilter extends OncePerRequestFilter {
 
         }
 
-        if(!agentAuth.isSupervisor() && path.startsWith("/agent")){
+        if (!agentAuth.isSupervisor() && path.startsWith("/agent")) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             errorResponse.setError("Agent not authorized");
             response.setHeader("Content-Type", "application/json");
@@ -96,16 +96,10 @@ public class JWTFilter extends OncePerRequestFilter {
 
         }
 
-        request.setAttribute("authId", id);
-
-
+        request.setAttribute("authid", id);
 
         filterChain.doFilter(request, response);
     }
-
-
-
-
 
 
 }
