@@ -16,5 +16,4 @@ public class ClientModel extends User {
     private PropertyType propertyType;
     private Location location;
     private ContractType contractType;
-
 }
