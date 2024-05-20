@@ -4,6 +4,7 @@ import com.gprogrammers.rem.models.AgentModel;
 import com.gprogrammers.rem.services.AgentService;
 import com.gprogrammers.rem.types.ApiErrorResponse;
 import com.gprogrammers.rem.utils.JWTUtil;
+import com.mongodb.lang.NonNull;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,15 +26,24 @@ public class JWTFilter extends OncePerRequestFilter {
 
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
 
+
+        String method=request.getMethod();
+        if(method.equals("OPTIONS")) {
+            response.setStatus(204);
+            return;
+        }
 
         String path = request.getRequestURI();
-        String authPath = "/auth/login";
+
+
+       String authPath = "/auth/login";
         if (path.startsWith(authPath)) {
             filterChain.doFilter(request, response);
             return;
         }
+
 
         ApiErrorResponse errorResponse = new ApiErrorResponse();
 
@@ -97,6 +107,7 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
         request.setAttribute("authid", id);
+
 
         filterChain.doFilter(request, response);
     }
