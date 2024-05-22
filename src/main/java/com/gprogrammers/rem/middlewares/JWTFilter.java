@@ -39,7 +39,9 @@ public class JWTFilter extends OncePerRequestFilter {
 
 
        String authPath = "/auth/login";
-        if (path.startsWith(authPath)) {
+
+       String staticPath = "/media";
+        if (path.startsWith(authPath) || path.startsWith(staticPath)) {
             filterChain.doFilter(request, response);
             return;
         }
