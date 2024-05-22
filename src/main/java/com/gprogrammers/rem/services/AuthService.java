@@ -48,7 +48,7 @@ public class AuthService {
 
         try {
             Files.write(newFile.toPath(), file.getBytes());
-            return "images/" + file.getOriginalFilename();
+            return "media/" + file.getOriginalFilename();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
